@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -14,4 +15,5 @@ func main() {
 		w.Write([]byte("Hello World"))
 	})
 	http.Handle("/", r)
+	http.ListenAndServe(":8080", nil)
 }
